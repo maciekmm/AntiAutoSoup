@@ -1,0 +1,3 @@
+bans:
+    banAttempts: 3
+    banTime: 30

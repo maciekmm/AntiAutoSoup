@@ -1,0 +1,39 @@
+name: ${project.name}
+version: ${project.version}
+description: ${project.description}
+author: maciekmm
+website: ${project.url}
+main: ${main.class}
+commands:
+  asban:
+    description: Bans a player for using autosoups
+    usage: /<command> <player> - Bans a player for using autosoups
+    aliases: [aban]
+    permission: antiautosoup.ban
+  asunban:
+    description: Teleport to a parkour course
+    usage: /<command> <player> - Unbans a player
+    aliases: [aunban]
+    permission: antiautosoup.ban
+  asbaninfo:
+    description: Teleport to a parkour course
+    usage: /<command> <player> - Checks ban info
+    aliases: [abi,abaninfo]
+    permission: antiautosoup.ban
+permissions:
+  antiautosoup.admin:
+    description: All anti auto soup permissions
+    default: op
+    children:
+        antiautosoup.bypass: true
+        antiautosoup.moderator: true
+        antiautosoup.ban: true
+  antiautosoup.bypass:
+    description: Do not perform checks for this player.
+    default: op
+  antiautosoup.moderator:
+    description: Get notifications about players using auto soup.
+    default: op
+  antiautosoup.ban:
+    description: Allows to use /asban /asunban /asbaninfo
+    default: op
